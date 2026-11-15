@@ -8,6 +8,8 @@ def main():
         response.raise_for_status()
         posts = response.json()
 
-    for i in posts:
-        print(f"Post #i")
+        for post in posts[:5]:
+            print(f"Post ID: {post['id']}")
 
+    except requests.RequestException as e:
+        print(f"Error fetching posts: {e}")
