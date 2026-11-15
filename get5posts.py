@@ -10,6 +10,13 @@ def main():
 
         for post in posts[:5]:
             print(f"Post ID: {post['id']}")
+            print(f"Title: {post['title']}")
+            print(f"Body: {post['body']}")
+            print("---")
 
     except requests.RequestException as e:
         print(f"Error fetching posts: {e}")
+
+
+
+main()
