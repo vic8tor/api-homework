@@ -17,7 +17,15 @@ def get_weather():
         response = requests.get(API_URL, params=params, timeout=10)
         response.raise_for_status()
         weather = response.json()
+        temperature = weather["main"]["temp"]
+        description = weather["weather"][0]["description"]
+        
+        print(f'City: {city}')
+        print(f'Temperature: {temperature}')
+        print(f'Decription: {description}')
     except requests.RequestException as e:
-        print(f"Error fetching posts: {e}")
+        print(f"Error fetching weather: {e}")
 
-get_weather("")
+
+
+get_weather()
